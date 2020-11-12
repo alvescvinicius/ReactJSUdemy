@@ -8,3 +8,8 @@ create-react-app meusite
 
 # Iniciar projeto
 npm start
+
+# Plugins (Extensoes) para VSCode
+React-Native/React/Redux snippets for es6/es7
+Reactjs code snippets
+vscode-icons
