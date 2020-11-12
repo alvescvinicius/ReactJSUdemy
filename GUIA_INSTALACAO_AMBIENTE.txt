@@ -1,0 +1,10 @@
+# Instalar NodeJS
+# Instalar Yarn
+# Instalar React Globalmente
+npm install -g create-react-app
+
+# Criar projeto (cmd como administrador)
+create-react-app meusite
+
+# Iniciar projeto
+npm start
