@@ -1,10 +1,22 @@
 import React from 'react';
 
+// Criando stateless component (só uma linha não precisa de {})
+// const Bemvindo = () => <h2>Bem-vindo(a)</h2>
+const Bemvindo = () => {
+    return (
+        <div>
+            <h2>Bem-vindo(a)</h2>
+        </div> 
+    );
+}
+
 function App(){
     return (
 
       <div>
-          <h1>Olá Mundo !</h1>
+            Olá Mundo !
+            <Bemvindo/>
+            <h1>Curso React</h1>
       </div>  
 
     );
