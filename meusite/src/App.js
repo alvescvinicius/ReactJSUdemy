@@ -1,66 +1,59 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-// Criando stateless component (só uma linha não precisa de {})
-// const Bemvindo = () => <h2>Bem-vindo(a)</h2>
-const Equipe = (props) => {
-  return (
-    <div>
-
-      <Sobre
-        nome={props.nome}
-        cargo={props.cargo}
-        idade={props.idade} 
-      />
-
-      <Social 
-        facebook={props.facebook}
-        linkedin={props.linkedin}
-        youtube={props.youtube}
-      />
-      <hr />
-
-    </div>
-  );
+class Equipe extends Component {
+  render() {
+    return (
+      <div>
+        <Sobre
+          nome={this.props.nome}
+          cargo={this.props.cargo}
+          idade={this.props.idade}
+        />
+      </div>
+    );
+  }
 }
 
-const Sobre = (props) => {
-  return (
-    <div>
-      <h2>Olá sou o(a) {props.nome}</h2>
-      <h3>Cargo: {props.cargo}</h3>
-      <h3>idade: {props.idade}</h3>
-    </div>
-  );
+class Sobre extends Component {
+  render() {
+    return (
+      <div>
+        <h2> Olá eu sou o(a) {this.props.nome} </h2>
+        <h3> Cargo: {this.props.cargo} </h3>
+        <h3> Idade: {this.props.idade} </h3>
+        <Social />
+      </div>
+    );
+  }
 }
 
-const Social = (props) => {
-  return(
+const Social = () => {
+  return (
     <div>
-      <a href={props.facebook}>Facebook </a>
-      <a href={props.linkedin}>LinkedIn </a>
-      <a href={props.youtube}>Youtube </a>
+      <a>Facebook </a>
+      <a>LinkedIn </a>
     </div>
   );
 }
 
 function App() {
   return (
-
     <div>
       <h1>Conheça nossa equipe:</h1>
-      <Equipe nome="Lucas" 
-              cargo="Progamador" 
-              idade="29" 
-              facebook="https://facebook.com/" 
-              linkedin="https://linkedin.com "
-              youtube="https://youtube.com.br"
+      <Equipe
+        nome="Matheus"
+        cargo="Dev"
+        idade="19"
       />
-      <Equipe nome="Fernando" 
-              cargo="Progamador" 
-              idade="27" 
-              facebook="https://facebook.com/" 
-              linkedin="https://linkedin.com "
-              youtube="https://youtube.com.br"
+      <Equipe
+        nome="Lucas"
+        cargo="Treinee"
+        idade="20"
+      />
+      <Equipe
+        nome="Fernanda"
+        cargo="Administrativo"
+        idade="19"
       />
     </div>
   );
