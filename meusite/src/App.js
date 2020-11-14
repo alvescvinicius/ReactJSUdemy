@@ -1,63 +1,56 @@
 import React, { Component } from 'react';
 
-class Equipe extends Component {
+class App extends Component {
+
+  constructor(props) {
+    // Super usa as props do pai no caso render(){}
+    super(props);
+    // States referentes ao object App no caso
+    this.state = {
+      nome: 'Matheus',
+      contador: 0
+    };
+
+    // Faz funcao aumentar atualizar o valor
+    this.aumentar = this.aumentar.bind(this);
+    this.diminuir = this.diminuir.bind(this);
+
+  }
+
+  aumentar() {
+
+    let state = this.state;
+    state.contador += 1;
+    this.state.nome = 'Jose';
+    this.setState(state);
+  }
+
+  diminuir() {
+
+    let state = this.state;
+
+    if (state.contador === 0) {
+      alert('Opa chegou a zero !');
+      return;
+    }
+
+    state.contador -= 1;
+    this.setState(state);
+  }
+
   render() {
     return (
       <div>
-        <Sobre
-          nome={this.props.nome}
-          cargo={this.props.cargo}
-          idade={this.props.idade}
-        />
+        <h1>Contador</h1>
+        {this.state.nome}
+        <h3>
+          <button onClick={this.diminuir}>-</button>
+          {this.state.contador}
+          <button onClick={this.aumentar}>+</button>
+        </h3>
       </div>
     );
   }
 }
 
-class Sobre extends Component {
-  render() {
-    return (
-      <div>
-        <h2> Olá eu sou o(a) {this.props.nome} </h2>
-        <h3> Cargo: {this.props.cargo} </h3>
-        <h3> Idade: {this.props.idade} </h3>
-        <Social />
-      </div>
-    );
-  }
-}
-
-const Social = () => {
-  return (
-    <div>
-      <a>Facebook </a>
-      <a>LinkedIn </a>
-    </div>
-  );
-}
-
-function App() {
-  return (
-    <div>
-      <h1>Conheça nossa equipe:</h1>
-      <Equipe
-        nome="Matheus"
-        cargo="Dev"
-        idade="19"
-      />
-      <Equipe
-        nome="Lucas"
-        cargo="Treinee"
-        idade="20"
-      />
-      <Equipe
-        nome="Fernanda"
-        cargo="Administrativo"
-        idade="19"
-      />
-    </div>
-  );
-}
-
-// Exporta para poder ser acesso em outra lugar
 export default App;
