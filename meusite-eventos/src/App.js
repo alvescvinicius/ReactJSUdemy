@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Membro from './components/Membro/Membro';
+import Membro from './components/Membro';
 
 class App extends Component {
 
   render(){
     return (
       <div>
-        <Membro/>
+        <Membro nome="visitante" />
       </div>
     );
   }
