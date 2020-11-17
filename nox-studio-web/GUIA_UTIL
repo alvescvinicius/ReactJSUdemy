@@ -13,3 +13,6 @@ npm start
 # ------------------------------------------------------------- #
 # -                                                          -  #
 # ------------------------------------------------------------- #
+component/Home/index.js
+component/Login/index.js
+component/Register/index.js
