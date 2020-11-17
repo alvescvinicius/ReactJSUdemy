@@ -1,0 +1,23 @@
+# Instalar NodeJS
+# Instalar Yarn
+# Instalar React Globalmente
+npm install -g create-react-app
+
+# Criar projeto (cmd como administrador)
+create-react-app projeto-blog
+
+# Iniciar projeto
+npm start
+
+# Plugins (Extensoes) para VSCode
+React-Native/React/Redux snippets for es6/es7
+Reactjs code snippets
+vscode-icons
+
+# ---------------------------------------------
+# Criação de prototipo do projeto com figma
+# ---------------------------------------------
+# www.figma.com
+#   Permite criar prototipos de forma gratuita.
+#   Baixar aplicação desktop do figma.
+# Nome do projeto: Blog Programador
