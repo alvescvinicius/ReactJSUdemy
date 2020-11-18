@@ -4,12 +4,20 @@ import { BrowserRouter,Switch,Route } from 'react-router-dom';
 import Home from './component/Home';
 import Header from './component/Header';
 import './global.css';
+import firebase from './firebase'
 
 class App extends Component {
 
   state = {
     firebaseInitialized: false
   };
+
+  componentDidMount(){
+    firebase.isInitialized().then(resultado => {
+      // Devolve usuario
+      this.setState({firebaseInitialized: resultado});
+    })
+  }
 
   render(){
     return this.state.firebaseInitialized !== false ? (
