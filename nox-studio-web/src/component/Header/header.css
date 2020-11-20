@@ -1,0 +1,23 @@
+header#main-header {
+    background: #272727;
+    height: 72px;
+}
+
+header#main-header .header-content{
+    width: 100%;
+    max-width: 930px;
+    margin: 0 auto; /* Responsivo */
+    padding: 0 30px;
+    height: 72px;
+
+    /* Justifica em cada canto */
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; /* Verificar outros p/ ver como funciona */
+}
+
+header#main-header .header-content a{
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+}

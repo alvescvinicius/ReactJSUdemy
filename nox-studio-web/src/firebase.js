@@ -20,6 +20,7 @@ class Firebase {
     // Construtor iniciando o firebase
     constructor(){
         app.initializeApp(firebaseConfig);
+        this.app = app.database();
     }
 
     // Metodos 
