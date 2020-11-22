@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:#fafafa;
+    font: 14px sans-serif;
+    /* This Webkit make text better quality */
+    -webkit-font-smoothing: antialiased !important;
+
+
+  /* The image used */
+  background-image: url("./blureed-blue.jpg");
+
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.9;
+}

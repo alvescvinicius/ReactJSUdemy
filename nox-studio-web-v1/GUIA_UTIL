@@ -1,0 +1,44 @@
+# ------------------------------------------------------------- #
+# -                                                          -  #
+# ------------------------------------------------------------- #
+# Create project
+create-react-app nox-studio-web
+cd nox-studio-web
+
+# Install frameworks
+npm install react-router-dom
+npm install --save firebase
+
+npm start
+# ------------------------------------------------------------- #
+# -                                                          -  #
+# ------------------------------------------------------------- #
+component/Home/index.js
+component/Login/index.js
+component/Register/index.js
+component/Dashboard/index.js
+component/Header/index.js
+
+# ------------------------------------------------------------- #
+# - Firebase project web                                                         -  #
+# ------------------------------------------------------------- #
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB3euWSuDydslabAJeEPhPW3qpvgn8AV8E",
+    authDomain: "nox-studio.firebaseapp.com",
+    databaseURL: "https://nox-studio.firebaseio.com",
+    projectId: "nox-studio",
+    storageBucket: "nox-studio.appspot.com",
+    messagingSenderId: "1010873134018",
+    appId: "1:1010873134018:web:fc4ec36c819f270a78c45b"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>

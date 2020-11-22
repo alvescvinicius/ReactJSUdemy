@@ -1,0 +1,40 @@
+header#main-header {
+    background: #ccc;
+    height: 56px;
+    opacity: 0.8;
+}
+
+header#main-header .header-content{
+    width: 100%;
+    max-width: 930px;
+    margin: 0 auto; /* Responsivo */
+    padding: 0 30px;
+    height: 56px;
+
+    /* Justifica em cada canto */
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; /* Verificar outros p/ ver como funciona */
+}
+
+header#main-header .header-content a{
+    text-decoration: none;
+    color: black;
+    font-size: 23px;
+    font-style: inherit;
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+a:active {
+    opacity: 0.4;
+}
+
+.icon {
+    margin: 0 auto;
+    padding: 0;
+    width: 23px;
+    height: 23px;
+}

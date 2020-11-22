@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { BrowserRouter,Switch,Route } from 'react-router-dom';
 import Home from './component/Home';
 import Header from './component/Header';
-import Login from './component/Login';
 import './global.css';
 import firebase from './firebase'
 
@@ -26,7 +25,6 @@ class App extends Component {
       <Header/>
         <Switch>
           <Route exact path='/' component={Home}/>
-          <Route exact path='/login' component={Login}/>
         </Switch>
       </BrowserRouter>
     ) : (
