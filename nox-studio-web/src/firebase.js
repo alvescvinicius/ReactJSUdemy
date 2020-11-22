@@ -44,7 +44,7 @@ class Firebase {
 
     // Redireciona caso já esteja logado
     getCurrent(){
-        return app.auth.currentUser && app.auth.currentUser.email
+        return app.auth().currentUser && app.auth().currentUser.email
     }
 
 }
