@@ -4,6 +4,7 @@ import { BrowserRouter,Switch,Route } from 'react-router-dom';
 import Home from './component/Home';
 import Header from './component/Header';
 import Login from './component/Login';
+import Dashboard from './component/Dashboard';
 import './global.css';
 import firebase from './firebase'
 
@@ -27,6 +28,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route exact path='/login' component={Login}/>
+          <Route exact path='/dashboard' component={Dashboard}/>
         </Switch>
       </BrowserRouter>
     ) : (
