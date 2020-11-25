@@ -1,6 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
+import 'firebase/storage';
 
 // Your web app's Firebase configuration
 let firebaseConfig = {
@@ -16,35 +17,57 @@ let firebaseConfig = {
 // firebase.initializeApp(firebaseConfig);
 
 class Firebase {
-
-    // Construtor iniciando o firebase
-    constructor(){
+    constructor() {
         app.initializeApp(firebaseConfig);
+
+        //Referenciando a database para acessar em outros locais
         this.app = app.database();
+
+        this.storage = app.storage();
     }
 
-    // Metodos 
-    login(email, password){
-        return app.auth().signInWithEmailAndPassword(email, password);
+    login(email, password) {
+        return app.auth().signInWithEmailAndPassword(email, password)
     }
 
-    async register(nome, email, password){
-        await app.auth().createUserWithEmailAndPassword();
+    logout() {
+        return app.auth().signOut();
+    }
+
+    async register(nome, email, password) {
+        await app.auth().createUserWithEmailAndPassword(email, password)
+
         const uid = app.auth().currentUser.uid;
-        return app.database.ref('usuarios').child(uid).set({
-            nome: {nome}
-        });
+
+        return app.database().ref('usuarios').child(uid).set({
+            nome: nome
+        })
+
     }
 
-    isInitialized(){
+    isInitialized() {
         return new Promise(resolve => {
             app.auth().onAuthStateChanged(resolve);
         })
     }
 
-    // Redireciona caso já esteja logado
-    getCurrent(){
+    getCurrent() {
         return app.auth().currentUser && app.auth().currentUser.email
+    }
+
+    getCurrentUid() {
+        return app.auth().currentUser && app.auth().currentUser.uid
+    }
+
+    async getUserName(callback) {
+        if (!app.auth().currentUser) {
+            return null;
+        }
+
+        const uid = app.auth().currentUser.uid;
+        await app.database().ref('usuarios').child(uid)
+            .once('value').then(callback);
+
     }
 
 }
