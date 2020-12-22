@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import firebase from './firebase';
 
-import { BrowserRouter,Switch,Route } from 'react-router-dom';
-import Home from './component/Home';
-import Header from './component/Header';
-import Login from './component/Login';
-import Dashboard from './component/Dashboard';
-import Register from './component/Register';
+import Home from './components/Home';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import Register from './components/Register';
+import Header from './components/Header';
+import New from './components/New';
+
 import './global.css';
-import firebase from './firebase'
+import './app.css';
 
-class App extends Component {
+class App extends Component{
 
   state = {
     firebaseInitialized: false
@@ -17,7 +20,7 @@ class App extends Component {
 
   componentDidMount(){
     firebase.isInitialized().then(resultado => {
-      // Devolve usuario
+      // Devolve o usuario
       this.setState({firebaseInitialized: resultado});
     })
   }
@@ -25,17 +28,21 @@ class App extends Component {
   render(){
     return this.state.firebaseInitialized !== false ? (
       <BrowserRouter>
-      <Header/>
+        <Header/>
         <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route exact path='/login' component={Login}/>
-          <Route exact path='/dashboard' component={Dashboard}/>
-          <Route exact path='/register' component={Register}/>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/dashboard/new" component={New} />
         </Switch>
       </BrowserRouter>
     ) : (
-      <h1>Carregando...</h1>
+      <div id="loading">
+        <h1>Carregando...</h1>
+      </div>
     );
   }
 }
+
 export default App;
